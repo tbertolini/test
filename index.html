@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mappa del Sito</title>
+</head>
+<body>
+
+    <header>
+        <h1>Benvenuto sulla Mappa del Sito</h1>
+    </header>
+
+    <nav>
+        <label for="mapSelector">Seleziona una mappa:</label>
+        <select id="mapSelector" onchange="changeMap()">
+            <option value="map_cons_spec_el.html">Mappa 1</option>
+            <option value="map_cons_spec_el_pv.html">Mappa 2</option>
+            <option value="map_eff_el.html">Mappa 3</option>
+            <option value="map_eff_el_pv.html">Mappa 4</option>
+        </select>
+    </nav>
+
+    <section>
+        <h2>Mappa</h2>
+        <iframe id="mapFrame" width="100%" height="800px" src="mappa1.html"></iframe>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 La Tua Mappa del Sito. Tutti i diritti riservati.</p>
+    </footer>
+
+    <script>
+        function changeMap() {
+            var mapSelector = document.getElementById("mapSelector");
+            var mapFrame = document.getElementById("mapFrame");
+            var selectedMap = mapSelector.value;
+
+            // Aggiorna l'attributo "src" dell'iframe con il percorso della mappa selezionata
+            mapFrame.src = selectedMap;
+        }
+    </script>
+
+</body>
+</html>
